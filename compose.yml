@@ -21,8 +21,9 @@ services:
       - ./backend/config:/opt/app/config
       - ./backend/src:/opt/app/src
       - ./backend/scripts:/opt/app/scripts
-      - ./backend/package.json:/opt/package.json
-      - ./backend/package-lock.json:/opt/package-lock.json
+      - ./backend/package.json:/opt/app/package.json
+      - ./backend/package-lock.json:/opt/app/package-lock.json
+      - ./backend/jsconfig.json:/opt/app/jsconfig.json
       - ./backend/public/uploads:/opt/app/public/uploads
     ports:
       - 1337:1337

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": "Forum post replies"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "is_accepted_answer": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_hidden": {
+      "type": "boolean",
+      "default": false
+    },
+    "upvote_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "thread": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::thread.thread",
+      "inversedBy": "posts"
+    },
+    "parent_post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "child_posts"
+    },
+    "child_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "parent_post"
+    }
+  }
+}

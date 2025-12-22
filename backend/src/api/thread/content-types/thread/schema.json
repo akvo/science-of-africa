@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "threads",
+  "info": {
+    "singularName": "thread",
+    "pluralName": "threads",
+    "displayName": "Thread",
+    "description": "Forum discussion threads"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["open", "closed", "archived"],
+      "default": "open"
+    },
+    "is_pinned": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_locked": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_answered": {
+      "type": "boolean",
+      "default": false
+    },
+    "view_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-category.forum-category",
+      "inversedBy": "threads"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "threads"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "thread"
+    }
+  }
+}

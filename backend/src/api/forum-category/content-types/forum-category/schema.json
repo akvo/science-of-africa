@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_categories",
+  "info": {
+    "singularName": "forum-category",
+    "pluralName": "forum-categories",
+    "displayName": "Forum Category",
+    "description": "Forum categories for organizing discussions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string",
+      "default": "chat"
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0
+    },
+    "is_locked": {
+      "type": "boolean",
+      "default": false
+    },
+    "visibility": {
+      "type": "enumeration",
+      "enum": ["public", "members_only"],
+      "default": "members_only"
+    },
+    "threads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::thread.thread",
+      "mappedBy": "category"
+    }
+  }
+}

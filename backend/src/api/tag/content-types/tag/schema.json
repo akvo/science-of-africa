@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag",
+    "description": "Tags for categorizing threads"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 50
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "color": {
+      "type": "string",
+      "default": "#6366f1"
+    },
+    "threads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::thread.thread",
+      "mappedBy": "tags"
+    }
+  }
+}
