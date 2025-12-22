@@ -1,7 +1,5 @@
 # Science of Africa
 
-A professional full-stack application built with Strapi CMS and Next.js, following enterprise-grade development practices.
-
 ## 🚀 Quick Start
 
 ### Development Mode
