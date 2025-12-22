@@ -1,0 +1,23 @@
+# Docker volumes
+pg-data/
+pgadmin-data/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database dumps
+db/docker-entrypoint-initdb.d/001-*.sql
