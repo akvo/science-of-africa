@@ -163,7 +163,7 @@ export default function CategoryPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="text-sm border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
+              className="text-sm border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-gray-900 bg-white"
             >
               <option value="recent">Most Recent</option>
               <option value="popular">Most Viewed</option>

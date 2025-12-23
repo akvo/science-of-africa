@@ -286,7 +286,7 @@ export default function ThreadPage() {
                   onChange={(e) => setReplyContent(e.target.value)}
                   placeholder="Share your thoughts or answer..."
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-gray-900 bg-white"
                 />
                 <div className="mt-3 flex items-center justify-between">
                   <p className="text-xs text-gray-500">

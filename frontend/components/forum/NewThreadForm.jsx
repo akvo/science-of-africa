@@ -112,7 +112,7 @@ export default function NewThreadForm({ categories = [], onClose, onSuccess, pre
             <select
               value={categoryId}
               onChange={(e) => setCategoryId(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-gray-900 bg-white"
               required
             >
               <option value="">Select a category</option>
@@ -132,7 +132,7 @@ export default function NewThreadForm({ categories = [], onClose, onSuccess, pre
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="What would you like to discuss?"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-gray-900 bg-white"
               maxLength={200}
               required
             />
@@ -149,7 +149,7 @@ export default function NewThreadForm({ categories = [], onClose, onSuccess, pre
               onChange={(e) => setContent(e.target.value)}
               placeholder="Provide more details about your topic..."
               rows={8}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-gray-900 bg-white"
               required
             />
             <p className="mt-1 text-xs text-gray-400">

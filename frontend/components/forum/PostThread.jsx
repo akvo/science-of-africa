@@ -37,7 +37,7 @@ function ReplyForm({ onSubmit, onCancel, isSubmitting }) {
         onChange={(e) => setContent(e.target.value)}
         placeholder="Write your reply..."
         rows={3}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-sm"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-sm text-gray-900 bg-white"
       />
       <div className="mt-2 flex items-center space-x-2">
         <button
