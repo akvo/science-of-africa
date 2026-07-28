@@ -74,12 +74,12 @@ const ProfileLayout = ({
   // Auth Guard: Redirect to login if not authenticated after hydration
   useEffect(() => {
     if (hydrated && !isAuthenticated && variant === "private") {
-      router.push("/login");
+      router.replace("/login");
     }
   }, [hydrated, isAuthenticated, router, variant]);
 
-  // Show loading state while hydrating
-  if (!hydrated && variant === "private") {
+  // Show blank screen while hydrating or if not authenticated (redirecting to login)
+  if (variant === "private" && (!hydrated || !isAuthenticated)) {
     return <div className="min-h-screen bg-brand-gray-25" />;
   }
 

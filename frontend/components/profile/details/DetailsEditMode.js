@@ -813,7 +813,7 @@ const DetailsEditMode = ({
                   <Button
                     variant="outline"
                     type="button"
-                    disabled={orcidValidating}
+                    disabled={orcidValidating || !watch("orcidId")?.trim()}
                     onClick={async () => {
                       setOrcidValidating(true);
                       const result = await getOrcidAuthorizeUrl("profile");
@@ -823,7 +823,7 @@ const DetailsEditMode = ({
                         setOrcidValidating(false);
                       }
                     }}
-                    className="px-8 rounded-full text-sm h-10 border-brand-teal-900 text-brand-teal-900 hover:bg-brand-teal-50 hover:text-brand-teal-700 transition-all font-outfit"
+                    className="px-8 rounded-full text-sm h-10 border-brand-teal-900 text-brand-teal-900 hover:bg-brand-teal-50 hover:text-brand-teal-700 transition-all font-outfit disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {orcidValidating ? (
                       <>

@@ -58,12 +58,12 @@ const MainLayout = ({
       router.pathname !== "/login" &&
       router.pathname !== "/signup"
     ) {
-      router.push("/onboarding");
+      router.replace("/onboarding");
     }
 
     // 3. Guard for Unauthenticated Users accessing Onboarding
     if (!isAuthenticated && router.pathname === "/onboarding") {
-      router.push("/login");
+      router.replace("/login");
     }
   }, [isAuthenticated, user, router.pathname, router]);
 

@@ -82,9 +82,14 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium text-primary-500">
           <LocaleSwitcher />
           <div className="flex items-center gap-6">
-            <Link href="/news" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://scienceforafrica.foundation/media-centre"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               {t("navbar.news")}
-            </Link>
+            </a>
             <Link
               href="/contact"
               className="hover:opacity-80 transition-opacity"
@@ -310,18 +315,12 @@ const Navbar = () => {
                       {PROFILE_MENU_ITEMS.map((item) => (
                         <DropdownMenuItem
                           key={item.key}
-                          asChild
-                          nativeButton={false}
                           className="px-5 py-3 focus:bg-brand-gray-50 cursor-pointer overflow-hidden group"
+                          onClick={() => router.push(item.href)}
                         >
-                          <Link
-                            href={item.href}
-                            className="flex items-center w-full"
-                          >
-                            <span className="text-sm font-medium text-black group-hover:text-brand-teal-900 transition-colors">
-                              {t(`navbar.profile_dropdown.${item.key}`)}
-                            </span>
-                          </Link>
+                          <span className="text-sm font-medium text-black group-hover:text-brand-teal-900 transition-colors">
+                            {t(`navbar.profile_dropdown.${item.key}`)}
+                          </span>
                         </DropdownMenuItem>
                       ))}
                     </div>
@@ -331,18 +330,12 @@ const Navbar = () => {
                     {/* Support Section */}
                     <div className="py-2">
                       <DropdownMenuItem
-                        asChild
-                        nativeButton={false}
                         className="px-5 py-3 focus:bg-brand-gray-50 cursor-pointer group"
+                        onClick={() => router.push("/coming-soon")}
                       >
-                        <Link
-                          href="/coming-soon"
-                          className="flex items-center w-full"
-                        >
-                          <span className="text-sm font-medium text-black group-hover:text-brand-teal-900 transition-colors">
-                            {t("navbar.profile_dropdown.faq")}
-                          </span>
-                        </Link>
+                        <span className="text-sm font-medium text-black group-hover:text-brand-teal-900 transition-colors">
+                          {t("navbar.profile_dropdown.faq")}
+                        </span>
                       </DropdownMenuItem>
                     </div>
 

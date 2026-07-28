@@ -6,6 +6,11 @@
   "locale": null,
   "permissions": [
     {
+      "documentId": "i7s9nozfrrsg9s325xt9med8",
+      "action": "api::auth.auth.logout",
+      "locale": null
+    },
+    {
       "documentId": "tg39rhkq4y2h6ji1vqv9ry0n",
       "action": "api::auth.auth.registrationStatus",
       "locale": null
@@ -26,7 +31,7 @@
       "locale": null
     },
     {
-      "documentId": "mg8rqvoy88mkcvhwipz4m681",
+      "documentId": "q14ajjf9ki2i1omw6czr07bb",
       "action": "api::auth.profile.getMe",
       "locale": null
     },
@@ -66,7 +71,7 @@
       "locale": null
     },
     {
-      "documentId": "szeu32yxj1vj7yoe1cng6p3v",
+      "documentId": "m7a8h57eitixnwu5w3uadmk0",
       "action": "api::collaboration-call.collaboration-call.create-with-invites",
       "locale": null
     },
@@ -121,6 +126,11 @@
       "locale": null
     },
     {
+      "documentId": "hkpszsp0r3lwnbnm55d8uy20",
+      "action": "api::community-page.community-page.find",
+      "locale": null
+    },
+    {
       "documentId": "ujjmychvyvl4xyw9tuegne4d",
       "action": "api::community.community.find",
       "locale": null
@@ -138,6 +148,11 @@
     {
       "documentId": "ngtl1b8sbn3qyd2z7jhyvhe2",
       "action": "api::community.community.leave",
+      "locale": null
+    },
+    {
+      "documentId": "urx5zzv5o2fw4xk3owgk0354",
+      "action": "api::contact-page.contact-page.find",
       "locale": null
     },
     {
@@ -176,13 +191,18 @@
       "locale": null
     },
     {
-      "documentId": "sync-auth-resources-page-find",
-      "action": "api::resources-page.resources-page.find",
+      "documentId": "kujvk6vqi8fnmivrf5qv9l7t",
+      "action": "api::orcid-auth.orcid-auth.authorize",
       "locale": null
     },
     {
-      "documentId": "sync-auth-community-page-find",
-      "action": "api::community-page.community-page.find",
+      "documentId": "v8qfa4kshk52mds1xdb2hbzx",
+      "action": "api::orcid-auth.orcid-auth.callback",
+      "locale": null
+    },
+    {
+      "documentId": "aflb4iwklfh2nva2eqwfpnk3",
+      "action": "api::orcid-auth.orcid-auth.validate",
       "locale": null
     },
     {
@@ -213,6 +233,11 @@
     {
       "documentId": "jieeeo0pyt5agzkypqpnpxd2",
       "action": "api::resource.resource.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "nq20okn5xeplwcho9buzvnqb",
+      "action": "api::resources-page.resources-page.find",
       "locale": null
     },
     {

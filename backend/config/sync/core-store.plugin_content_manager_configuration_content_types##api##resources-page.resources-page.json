@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::institution-membership.institution-membership",
+  "key": "plugin_content_manager_configuration_content_types::api::resources-page.resources-page",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
-      "defaultSortBy": "createdAt",
+      "mainField": "badge",
+      "defaultSortBy": "badge",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,76 +19,60 @@
           "sortable": true
         }
       },
-      "label": {
+      "badge": {
         "edit": {
-          "label": "label",
+          "label": "badge",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "label",
+          "label": "badge",
           "searchable": true,
           "sortable": true
         }
       },
-      "user": {
+      "title": {
         "edit": {
-          "label": "user",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "user",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "institution": {
-        "edit": {
-          "label": "institution",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "name"
-        },
-        "list": {
-          "label": "institution",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "type": {
-        "edit": {
-          "label": "type",
+          "label": "title",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "type",
+          "label": "title",
           "searchable": true,
           "sortable": true
         }
       },
-      "verificationStatus": {
+      "description": {
         "edit": {
-          "label": "verificationStatus",
+          "label": "description",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "verificationStatus",
+          "label": "description",
           "searchable": true,
           "sortable": true
+        }
+      },
+      "heroImage": {
+        "edit": {
+          "label": "heroImage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "heroImage",
+          "searchable": false,
+          "sortable": false
         }
       },
       "createdAt": {
@@ -161,40 +145,34 @@
     "layouts": {
       "list": [
         "id",
-        "user",
-        "institution",
-        "type"
+        "badge",
+        "title",
+        "description"
       ],
       "edit": [
         [
           {
-            "name": "user",
+            "name": "badge",
             "size": 6
           },
           {
-            "name": "institution",
+            "name": "title",
             "size": 6
           }
         ],
         [
           {
-            "name": "type",
+            "name": "description",
             "size": 6
           },
           {
-            "name": "verificationStatus",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "label",
+            "name": "heroImage",
             "size": 6
           }
         ]
       ]
     },
-    "uid": "api::institution-membership.institution-membership"
+    "uid": "api::resources-page.resources-page"
   },
   "type": "object",
   "environment": null,

@@ -573,6 +573,20 @@
           "sortable": true
         }
       },
+      "agreedToTerms": {
+        "edit": {
+          "label": "agreedToTerms",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "agreedToTerms",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -641,7 +655,12 @@
       }
     },
     "layouts": {
-      "list": ["id", "username", "email", "confirmed"],
+      "list": [
+        "id",
+        "username",
+        "email",
+        "confirmed"
+      ],
       "edit": [
         [
           {
@@ -824,6 +843,10 @@
         [
           {
             "name": "subscriberCount",
+            "size": 4
+          },
+          {
+            "name": "agreedToTerms",
             "size": 4
           }
         ]

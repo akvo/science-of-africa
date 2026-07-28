@@ -5,23 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ViewRow } from "./SharedComponents";
 import VerificationBadge from "@/components/shared/VerificationBadge";
-import { getStrapiMedia, getOrcidAuthorizeUrl } from "@/lib/strapi";
+import { getStrapiMedia } from "@/lib/strapi";
 import { useTranslation } from "next-i18next";
 import { toast } from "sonner";
 
 const DetailsViewMode = ({ user, t, onEdit, onUserUpdate, isPublic }) => {
   const { t: tCommon } = useTranslation("common");
-  const [validating, setValidating] = React.useState(false);
-
-  const handleValidateOrcid = async () => {
-    setValidating(true);
-    const result = await getOrcidAuthorizeUrl("profile");
-    if (result?.data?.authorizeUrl) {
-      window.location.href = result.data.authorizeUrl;
-    } else {
-      setValidating(false);
-    }
-  };
   return (
     <div className="animate-in fade-in duration-500">
       <div className="flex items-center justify-between pb-9 border-b border-brand-gray-100">
@@ -224,31 +213,9 @@ const DetailsViewMode = ({ user, t, onEdit, onUserUpdate, isPublic }) => {
                 )}
               </div>
             ) : (
-              <>
-                {!isPublic && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled={validating}
-                    onClick={handleValidateOrcid}
-                    className="rounded-full text-xs h-10 px-6 border-brand-teal-800 text-brand-teal-800 hover:bg-brand-teal-50 shrink-0"
-                  >
-                    {validating ? (
-                      <>
-                        <Loader2 className="size-3 animate-spin mr-1" />
-                        {tCommon("verification.verifying")}
-                      </>
-                    ) : (
-                      tCommon("verification.verify_orcid")
-                    )}
-                  </Button>
-                )}
-                {isPublic && !user?.orcidId && (
-                  <p className="text-[15px] text-brand-gray-500 font-medium">
-                    {t("details.not_provided")}
-                  </p>
-                )}
-              </>
+              <p className="text-[15px] text-brand-gray-500 font-medium">
+                {user?.orcidId || t("details.not_provided")}
+              </p>
             )}
           </div>
         </div>

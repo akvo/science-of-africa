@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::institution-membership.institution-membership",
+  "key": "plugin_content_manager_configuration_content_types::api::contact-page.contact-page",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
-      "defaultSortBy": "createdAt",
+      "mainField": "title",
+      "defaultSortBy": "title",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,74 +19,58 @@
           "sortable": true
         }
       },
-      "label": {
+      "title": {
         "edit": {
-          "label": "label",
+          "label": "title",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "label",
+          "label": "title",
           "searchable": true,
           "sortable": true
         }
       },
-      "user": {
+      "description": {
         "edit": {
-          "label": "user",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "user",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "institution": {
-        "edit": {
-          "label": "institution",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "name"
-        },
-        "list": {
-          "label": "institution",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "type": {
-        "edit": {
-          "label": "type",
+          "label": "description",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "type",
-          "searchable": true,
-          "sortable": true
+          "label": "description",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "verificationStatus": {
+      "email": {
         "edit": {
-          "label": "verificationStatus",
+          "label": "email",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "verificationStatus",
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "phone": {
+        "edit": {
+          "label": "phone",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "phone",
           "searchable": true,
           "sortable": true
         }
@@ -161,40 +145,36 @@
     "layouts": {
       "list": [
         "id",
-        "user",
-        "institution",
-        "type"
+        "title",
+        "email",
+        "phone"
       ],
       "edit": [
         [
           {
-            "name": "user",
-            "size": 6
-          },
-          {
-            "name": "institution",
+            "name": "title",
             "size": 6
           }
         ],
         [
           {
-            "name": "type",
-            "size": 6
-          },
-          {
-            "name": "verificationStatus",
-            "size": 4
+            "name": "description",
+            "size": 12
           }
         ],
         [
           {
-            "name": "label",
+            "name": "email",
+            "size": 6
+          },
+          {
+            "name": "phone",
             "size": 6
           }
         ]
       ]
     },
-    "uid": "api::institution-membership.institution-membership"
+    "uid": "api::contact-page.contact-page"
   },
   "type": "object",
   "environment": null,

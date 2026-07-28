@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::institution-membership.institution-membership",
+  "key": "plugin_content_manager_configuration_content_types::api::user-session.user-session",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
-      "defaultSortBy": "createdAt",
+      "mainField": "ipAddress",
+      "defaultSortBy": "ipAddress",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,16 +19,16 @@
           "sortable": true
         }
       },
-      "label": {
+      "tokenHash": {
         "edit": {
-          "label": "label",
+          "label": "tokenHash",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "label",
+          "label": "tokenHash",
           "searchable": true,
           "sortable": true
         }
@@ -48,45 +48,44 @@
           "sortable": true
         }
       },
-      "institution": {
+      "lastActivity": {
         "edit": {
-          "label": "institution",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "name"
-        },
-        "list": {
-          "label": "institution",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "type": {
-        "edit": {
-          "label": "type",
+          "label": "lastActivity",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "type",
+          "label": "lastActivity",
           "searchable": true,
           "sortable": true
         }
       },
-      "verificationStatus": {
+      "ipAddress": {
         "edit": {
-          "label": "verificationStatus",
+          "label": "ipAddress",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "verificationStatus",
+          "label": "ipAddress",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "userAgent": {
+        "edit": {
+          "label": "userAgent",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "userAgent",
           "searchable": true,
           "sortable": true
         }
@@ -161,40 +160,40 @@
     "layouts": {
       "list": [
         "id",
+        "tokenHash",
         "user",
-        "institution",
-        "type"
+        "lastActivity"
       ],
       "edit": [
         [
           {
+            "name": "tokenHash",
+            "size": 6
+          },
+          {
             "name": "user",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "lastActivity",
+            "size": 6
           },
           {
-            "name": "institution",
+            "name": "ipAddress",
             "size": 6
           }
         ],
         [
           {
-            "name": "type",
-            "size": 6
-          },
-          {
-            "name": "verificationStatus",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "label",
+            "name": "userAgent",
             "size": 6
           }
         ]
       ]
     },
-    "uid": "api::institution-membership.institution-membership"
+    "uid": "api::user-session.user-session"
   },
   "type": "object",
   "environment": null,
